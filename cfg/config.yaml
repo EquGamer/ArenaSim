@@ -1,0 +1,46 @@
+
+# Task config
+task_name: ${task.name}
+experiment: ''
+num_envs: ''
+seed: 0
+torch_deterministic: False
+max_iterations: ''
+
+# Device config
+physics_engine: 'physx'
+pipeline: 'gpu'
+sim_device: 'gpu'
+device_id: 0
+rl_device: 'cuda:0'
+
+# PhysX arguments
+num_threads: 4
+solver_type: 1 # 0: pgs, 1: tgs
+
+# RLGames Arguments
+test: False
+
+# disables rendering
+headless: False
+mt_timeout: 30
+
+# wandb config
+wandb_activate: False
+wandb_group: ''
+wandb_name: ${train.params.config.name}
+wandb_entity: ''
+wandb_project: 'arenasim'
+
+# set default task and default training config based on task
+defaults:
+  - task: RoboGame
+  - train: ${task}PPO
+  - hydra/job_logging: disabled
+
+# set the directory where the output files get saved
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
