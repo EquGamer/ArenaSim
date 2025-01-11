@@ -42,7 +42,7 @@ PYTHON -m pip install -r requirements.txt
 
 ## Notes
 The number of robots per team can be customized by modifying the parameter `NUM_ROBOTS_PER_TEAM` in the file `settings/constants_team.py`. This parameter determines the size of each team and affects both the simulation and training configurations. The suggested number of team size is 1 to 5.
-
+![Visualization](docs/source/scenario_5v5.png)
 
 
 ## Acknowledgement
